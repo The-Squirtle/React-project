@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Montserrat', sans-serif
+
+body
+  min-width: 320px
+
+main#app
+  header
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 60px
+    background-color: dodgerblue
+    color: white
+
+
+    div.header
+      text-align: center
+
+      div.header__image
+        width: 60%
+        height: 60%
+        margin: 10px auto
+
+        img
+          width: 100%
+          height: 100%
+          border-radius: 50%
+
+      h1.header__name
+        display: none
+
+    nav
+      margin-top: 30px
+
+      ul
+        list-style-type: none
+
+        li
+          a
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-wrap: wrap
+            height: 70px
+            padding: 0 10px
+            width: 100%
+            color: white
+            text-decoration: none
+            transition: font-size 100ms ease-in-out, background-color 100ms ease-in-out
+
+            &:hover
+              background-color: rgba(0, 191, 255, 0.2)
+              font-size: 1.2rem
+
+            span
+              display: block
+
+              &.link
+                margin-left: 10px
+                display: none
+
+
+  section
+    padding-left: 80px
+    padding-right: 20px
+    min-height: 100vh
+
+    &.home
+      display: flex
+      flex-wrap: wrap
+      flex-direction: column
+      justify-content: center
+
+      .home__image
+        text-align: center
+        margin: 20px
+
+        img
+          border-radius: 50%
+
+      h3
+        text-align: center
+        font-size: 2rem
+        margin: 20px 0
+
+      p
+        margin: 10px 0
+        font-weight: 800
+        text-decoration: underline
+        font-size: 1.2rem
+
+      & > article
+        text-align: justify
+        line-height: 1.5rem
+
+    &.experience
+      display: flex
+      flex-wrap: wrap
+      flex-direction: column
+      justify-content: center
+
+      article
+        width: 100%
+        text-decoration: underline
+        text-decoration-color: dodgerblue
+        text-decoration-thickness: 3px
+        font-size: 0.9rem
+        padding: 10px 0
+
+    &.contact
+      display: flex
+      justify-content: center
+
+      form
+        width: 100%
+        min-height: 100vh
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        .form__row
+          width: 100%
+          margin: 20px 0
+
+          label
+            font-size: 1.2rem
+
+          .form__row__input
+            margin-top: 10px
+
+            input,
+            textarea
+              width: 100%
+              font-size: 1.2rem
+              outline: none
+              border: 1px solid rgba(0, 0, 0, 0.1)
+              box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3)
+              border-radius: 5px
+              padding: 8px
+              transition: transform 200ms ease-in-out
+
+              &:hover
+                box-shadow: 2px 2px 20px rgba(100, 149, 237, 1)
+
+              &::placeholder
+                color: dodgerblue
+                font-size: 0.9rem
+
+            input
+              height: 40px
+
+            textarea
+              min-height: 150px
+              height: 200px
+              resize: vertical
+
+          button
+            width: 100%
+            height: 50px
+            background-color: dodgerblue
+            font-size: 1.2rem
+            color: white
+            outline: none
+            border: 1px solid rgba(0, 0, 0, 0.1)
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.4)
+            transition: box-shadow 100ms ease-in-out, transform 100ms ease-in-out
+
+            &:hover
+              box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4)
+              transform: scale(0.98)
+
+    &.portfolio
+      display: flex
+      justify-content: space-evenly
+      align-items: center
+      flex-wrap: wrap
+
+      article
+        width: 33%
+        min-width: 300px
+        max-width: 400px
+        margin: 20px
+
+        figure
+          position: relative
+          width: 100%
+          aspect-ratio: 1/1
+          border-radius: 20%
+          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.4)
+          overflow: hidden
+          background-color: transparent !important
+          transition: box-shadow 200ms ease-in-out, border-radius 200ms ease-in-out
+
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+          figcaption
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            background-color: rgba(0, 0, 0, 0.5)
+            color: white
+            text-align: center
+            height: 50px
+            display: flex
+            justify-content: center
+            align-items: center
+            border: none
+            backdrop-filter: blur(10px)
+
+          &:hover
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4)
+            border-radius: 1%
+
+
+@media screen and (min-width: 920px)
+  main#app
+    header
+      width: 250px
+
+      div.header
+        h1.header__name
+          display: block
+
+      nav
+        ul
+          li
+            a
+              padding-left: 20%
+              justify-content: inherit
+
+              span
+                &.link
+                  display: block
+
+    section
+      padding-left: 270px
+
+      &.experience
+        article
+          font-size: 1.3rem
+
+      &.contact
+        form
+          .form__row
+            width: 70%
+            max-width: 900px
